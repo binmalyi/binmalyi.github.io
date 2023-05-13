@@ -1,0 +1,20 @@
+@font-face {
+    src: url('../Fonts/Dongle-Regular.ttf') format('truetype');
+    font-family: 'DongleRegular';
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    src: url('../Fonts/Dongle-Bold.ttf') format('truetype');
+    font-family: 'DongleBold';
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    src: url('../Fonts/Dongle-Light.ttf') format('truetype');
+    font-family: 'DongleLight';
+    font-style: normal;
+    font-weight: normal;
+}
