@@ -1,20 +1,23 @@
 @font-face {
-    src: url('../Fonts/Dongle-Regular.ttf') format('truetype');
-    font-family: 'DongleRegular';
-    font-style: normal;
-    font-weight: normal;
-}
-
-@font-face {
     src: url('../Fonts/Dongle-Bold.ttf') format('truetype');
     font-family: 'DongleBold';
     font-style: normal;
-    font-weight: normal;
+    font-weight: bold;
+    font-display: swap;
 }
 
 @font-face {
     src: url('../Fonts/Dongle-Light.ttf') format('truetype');
     font-family: 'DongleLight';
     font-style: normal;
-    font-weight: normal;
+    font-weight: lighter;
+    font-display: swap;
+}
+
+@font-face {
+    src: url('../Fonts/SairaCondensed-Light.ttf') format('truetype');
+    font-family: 'SairaCondensedLight';
+    font-style: normal;
+    font-weight: lighter;
+    font-display: swap;
 }

@@ -8,54 +8,74 @@
     overflow-x: hidden;
 }
 
-.container {
-    position: absolute;
-    height: 50%;
-    width: 50%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.content {
-    position: relative;
-    height: 30svh;
-    width: calc(70% - 50px);
-    background-color: gray;
-    opacity: 0.5;
-    border-radius: 2%;
-    /* filter: blur(1px); */
-    box-shadow: 0 2px 10px 1px black;
-    padding: 20px;
-}
-
-.text-content {
-    position: relative;
-    height: 70%;
-    width: 100%;
-    font-family: 'DongleLight';
-    font-size: calc(3em - 1vmax);
-    filter: unset;
-    color: burlywood;
-    text-align: center;
-    text-overflow: clip;
+main {
+    font-family: DongleLight, Arial, Helvetica, sans-serif;
+    font-size: clamp(1.5rem, 5vw, 4rem);
     line-height: 2rem;
 }
 
-.profile {
-    position: relative;
-    height: 100px;
-    width: 100px;
-    border-radius: 5%;
-    background: no-repeat url('../Assets/Profile.jfif') center;
-    object-fit: fill;
-    background-size: cover;
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50vmin;
+    width: calc(50vmin + 20%);
+    border-radius: 4%;
+    backdrop-filter: blur(30px);
+    display: flex;
+    justify-content: space-between;
 }
 
-span {
-    font-family: DongleBold;
+.profile {
+    align-self: center;
+    margin-left: 5%;
+    height: 50%;
+    width: 25%;
+    background: no-repeat center url('../Assets/Profile.jfif');
+    background-size: cover;
+    border-radius: 3%;
+    border: .1px ridge black;
+}
+
+.info {
+    display: inherit;
+    flex-wrap: wrap;
+    height: inherit;
+    width: 64%;
+    border-radius: 0 4% 4% 0;
+    padding: 10% 7%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+section, section h5 {
+    box-sizing: border-box;
+    text-overflow: clip;
+    width: 100%;
+    margin: auto;
+}
+
+section p {
+    font-family: SairaCondensedLight, Arial, Helvetica, sans-serif;
+    font-size: min(.7em, 40%);
+    line-height: 1.2em;
+}
+
+ul {
+   list-style: none;
+   display: block;
+   margin: 0;
+   padding: 0;
+}
+
+li img {
+    width: 13%;
+}
+
+h5 span {
+    background-image: linear-gradient(to bottom, #ff00ff, purple 50%); /* Define the gradient colors */
+  background-clip: text; /* Clip the background to the text */
+  -webkit-background-clip: text; /* For Safari/Chrome */
+  color: transparent; /* Make the text transparent */
 }
