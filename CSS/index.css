@@ -1,81 +1,124 @@
 @import url('./fonts.css');
 
 :root {
-    background: no-repeat url('../Assets/Background.jpg');
-    height: 100svh;
-    background-position: center center;
-    background-size: cover;
-    overflow-x: hidden;
+    background-color: black;
+    color: white;
 }
 
-main {
-    font-family: DongleLight, Arial, Helvetica, sans-serif;
-    font-size: clamp(1.5rem, 5vw, 4rem);
-    line-height: 2rem;
-}
-
-.container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 50vmin;
-    width: calc(50vmin + 20%);
-    border-radius: 4%;
-    backdrop-filter: blur(30px);
-    display: flex;
-    justify-content: space-between;
-}
-
-.profile {
-    align-self: center;
-    margin-left: 5%;
-    height: 50%;
-    width: 25%;
-    background: no-repeat center url('../Assets/Profile.jfif');
-    background-size: cover;
-    border-radius: 3%;
-    border: .1px ridge black;
-}
-
-.info {
-    display: inherit;
-    flex-wrap: wrap;
-    height: inherit;
-    width: 64%;
-    border-radius: 0 4% 4% 0;
-    padding: 10% 7%;
-    box-sizing: border-box;
+html, body {
+    margin: 0;
     overflow: hidden;
 }
 
-section, section h5 {
+.space {
+    position: absolute;
     box-sizing: border-box;
-    text-overflow: clip;
-    width: 100%;
-    margin: auto;
+    height: 100svh;
+    width: 100svw;
+}
+
+.space::before, .space::after {
+    content: '';
+    position: absolute;
+    height: 200px;
+    width: 2px;  
+    background: linear-gradient(transparent, rgba(240, 255, 255, 0.897) 10%, rgb(80, 131, 226) 90%);
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-top-right-radius: 100%;
+    border-top-left-radius: 100%;
+    box-shadow: 0 5px 1px 2px blue;
+    filter: blur(2px);
+    animation: meteor 1.5s linear infinite;
+}
+
+.space::before {
+    background: linear-gradient(transparent, rgba(240, 255, 255, 0.897) 10%, rgb(226, 85, 80) 90%);
+    box-shadow: 0 5px 1px 2px orangered;
+    animation-duration: 4s;
+}
+
+.container {
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 40vmin;
+    width: calc(40vmin + 20%);
+    border-radius: 2%;
+    backdrop-filter: blur(5px);
+    background-color: transparent;
+    animation: glowbox 2s infinite linear;
+}
+
+.profile {
+    margin-left: 5%;
+    position: relative;
+    height: 50%;
+    width: 25%;
+    background: url("../Assets/Profile.jfif") no-repeat center;
+    background-size: cover;
+    border-radius: 5%;
+}
+
+section {
+    width: auto;
+    flex: 1;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-family: SairaCondensedLight;
+    text-align: center;
+}
+
+section h3 {
+    margin-top: 0;
 }
 
 section p {
-    font-family: SairaCondensedLight, Arial, Helvetica, sans-serif;
-    font-size: min(.7em, 40%);
-    line-height: 1.2em;
+    margin: 0;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
-ul {
-   list-style: none;
-   display: block;
-   margin: 0;
-   padding: 0;
+i {
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
 }
 
-li img {
-    width: 13%;
+i:nth-child(even){
+    animation: glow 1s ease-in-out infinite;
 }
 
-h5 span {
-    background-image: linear-gradient(to bottom, #ff00ff, purple 50%); /* Define the gradient colors */
-  background-clip: text; /* Clip the background to the text */
-  -webkit-background-clip: text; /* For Safari/Chrome */
-  color: transparent; /* Make the text transparent */
+i:nth-child(odd){
+    animation: glow 2s ease-in-out infinite;
+    animation-delay: 4s;
+}
+
+@keyframes glow {
+    100% {
+        transform: scale(0.7);
+    }
+}
+
+@keyframes meteor {
+    0% {
+        transform: translate(100vmax, 0svh) rotate(70deg);
+    }
+    100% {
+        transform: translate(-100vmax, 90svh) rotate(70deg);
+    }
+}
+
+@keyframes glowbox {
+    0% {
+        box-shadow: 0 0 2px rgb(187, 255, 255);
+    }
+    100% {
+        box-shadow: 0 0 5px rgb(187, 255, 255);
+    }
 }
