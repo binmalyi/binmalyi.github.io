@@ -1,7 +1,6 @@
 const particles = 300, container = document.querySelector("div");
 
 function generateParticles(){
-  console.log(window.visualViewport.height, window.visualViewport.width)
   if (container.children.length > 0) container.replaceChildren()
   const x_axis = window.crypto.getRandomValues(new Uint8Array(particles)),
         y_axis = window.crypto.getRandomValues(new Uint8Array(particles));
