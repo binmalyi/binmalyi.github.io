@@ -3,18 +3,22 @@
 :root {
     background-color: black;
     color: white;
+    overflow: hidden;
 }
 
 html, body {
     margin: 0;
+    padding: 0;
     overflow: hidden;
 }
 
 .space {
+    z-index: 1;
     position: absolute;
     box-sizing: border-box;
     height: 100svh;
     width: 100svw;
+    overflow: hidden;
 }
 
 .space::before, .space::after {
@@ -39,9 +43,11 @@ html, body {
 }
 
 .container {
+    z-index: 2;
     overflow: hidden;
     position: absolute;
     display: flex;
+    box-sizing: border-box;
     align-items: center;
     flex-wrap: wrap;
     top: 50%;
@@ -68,7 +74,8 @@ html, body {
 section {
     width: auto;
     flex: 1;
-    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-size: clamp(.8rem, 2vmax, 1.3rem);
+    line-height: 1.2em;
     font-family: SairaCondensedLight;
     text-align: center;
 }
@@ -107,18 +114,20 @@ i:nth-child(odd){
 
 @keyframes meteor {
     0% {
-        transform: translate(100vmax, 0svh) rotate(70deg);
+        transform: translate(100vmax, 0) rotate(70deg);
     }
     100% {
-        transform: translate(-100vmax, 90svh) rotate(70deg);
+        transform: translate(0, 50vmin) rotate(70deg);
     }
 }
 
 @keyframes glowbox {
     0% {
         box-shadow: 0 0 2px rgb(187, 255, 255);
+        /* transform: translate3d(0,0,0); */
     }
     100% {
         box-shadow: 0 0 5px rgb(187, 255, 255);
+        /* transform: translate3d(0,0,0); */
     }
 }
